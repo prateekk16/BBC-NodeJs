@@ -1,0 +1,53 @@
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: Merriweather,'Helvetica Neue',Arial,sans-serif; }
+
+a {
+  color: #ffffff;
+  transition: all .35s; }
+
+a:hover,
+a:focus {
+  color: #eb3812; }
+
+a:visited{
+  color:white;}
+
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5; }
+hr{
+  width: 50%;
+}
+
+.jumbotron {
+  min-height: 265px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-image: url(/assets/images/radio.png);
+  background-position: center;
+  background-size: cover; }
+
+.list-nav{
+      position: relative;
+    top: 70px;
+}
+.text-grey{
+    font-size: 14px;
+    color: #B1B0B0;
+}
+li.active{
+  background-color: red;
+  color: white;
+}
+.prog-title{
+  font-size: 20px;
+}

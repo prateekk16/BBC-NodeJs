@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	#wrapper(ng-controller="ListController as list" ng-init="list.getProgram('a',1)")
+		.jumbotron
+			h2 BBC iPlayer
+			hr
+			.list-nav
+				h5(class="text-grey") List of Programmes
+				ul(class="list-inline")
+					li(ng-repeat="letter in list.letters track by $index" ng-class="list.activeLetter(letter)")
+						a(href="" ng-click="list.getProgram(letter,1)")
+							{{ letter | uppercase }}
+		.container
+			.row
+				.col-md-12
+					h5 Programmes:-
+			.row
+				.col-md-6.col-lg-4.col-xs-12.text-center(ng-repeat="prog in list.programmes track by $index")
+					.panel.panel-default
+						.panel-body
+							img(class="img-thumbnail img-responsive" ng-src="{{list.image(prog.images.standard)}}")
+						.panel-footer
+							{{ prog.title }}
+			.row
+				.col-md-4.col-xs-6
+					nav
+						ul(class="pagination")
+							li(ng-class="list.prev(page)" ng-click="list.prevPage()")
+								a(href="" aria-label="Previous")
+									span(aria-hidden="true")
+										&laquo;
+							li(ng-repeat="page in list.pages track by $index" ng-class="list.active(page)")
+								a(href="" ng-click="list.getProgram(list.letter ,page)")
+									{{page}}
+							li( ng-class="list.next(page)" ng-click="list.nextPage()")
+								a(href="" aria-label="Next")
+									span(aria-hidden="true")
+										&raquo;
+
+
+			
+		
+			
+				
+					
+
+	
+  
